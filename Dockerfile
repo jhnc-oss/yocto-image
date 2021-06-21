@@ -1,4 +1,4 @@
-FROM fedora:32 
+FROM fedora:34 
 
 RUN dnf install -y \
         gawk \
@@ -43,7 +43,9 @@ RUN dnf install -y \
         perl-FindBin \
         perl-File-Compare \
         perl-File-Copy \
-        perl-locale && \
+        perl-locale \
+        glibc-langpack-en \
+        glibc-locale-source && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
