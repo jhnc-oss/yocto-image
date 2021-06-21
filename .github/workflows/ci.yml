@@ -1,0 +1,12 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  build_linux:
+    runs-on: ubuntu-latest
+    name: "Build"
+    steps:
+      - uses: actions/checkout@master
+      - name: Build
+        run: podman build .
