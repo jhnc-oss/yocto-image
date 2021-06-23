@@ -51,6 +51,7 @@ RUN dnf install -y \
 
 
 ENV LANG=en_US.UTF-8
+ENV LC_ALL=${LANG}
 RUN localedef --force -i en_US -f UTF-8 ${LANG}
 
 ENV YOCTO_DIR="/opt/yocto"
