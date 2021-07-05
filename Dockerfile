@@ -1,54 +1,56 @@
 FROM fedora:34 
 
 RUN dnf install -y \
-        gawk \
-        make \
-        wget \
-        tar \
         bzip2 \
-        gzip \
-        python3 \
-        unzip \
-        perl \
-        patch \
-        diffutils \
-        diffstat \
-        git \
+        ccache \
+        chrpath \
+        cpio \
         cpp \
+        diffstat \
+        diffutils \
+        file \
+        findutils \
+        gawk \
         gcc \
         gcc-c++ \
+        git \
+        glibc-locale-source \
         glibc-devel \
-        texinfo \
-        chrpath \
-        ccache \
-        perl-Data-Dumper \
-        perl-Text-ParseWords \
-        perl-Thread-Queue \
-        perl-bignum \
-        socat \
-        python3-pexpect \
-        findutils \
-        which \
-        file \
-        cpio \
-        python \
-        python3-pip \
-        xz \
-        python3-GitPython \
-        python3-jinja2 \
-        SDL-devel \
-        xterm \
-        rpcgen \
+        glibc-langpack-en \
+        glibc-locale-source \
+        gzip \
+        hostname \
+        make \
         mesa-libGL-devel \
-        perl-FindBin \
+        patch \
+        perl \
+        perl-bignum \
+        perl-Data-Dumper \
         perl-File-Compare \
         perl-File-Copy \
+        perl-FindBin \
         perl-locale \
-        glibc-langpack-en \
-        glibc-locale-source && \
+        perl-Text-ParseWords \
+        perl-Thread-Queue \
+        python \
+        python3 \
+        python3-GitPython \
+        python3-jinja2 \
+        python3-pexpect \
+        python3-pip \
+        rpcgen \
+        SDL-devel \
+        socat \
+        tar \
+        texinfo \
+        tmux \
+        unzip \
+        wget \
+        which \
+        xterm \
+        xz && \
     dnf clean all && \
     rm -rf /var/cache/dnf
-
 
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=${LANG}
