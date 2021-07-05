@@ -43,6 +43,7 @@ RUN dnf install -y \
         socat \
         tar \
         texinfo \
+        tmux \
         unzip \
         wget \
         which \
