@@ -19,6 +19,7 @@ RUN dnf install -y \
         glibc-langpack-en \
         glibc-locale-source \
         gzip \
+        hostname \
         make \
         mesa-libGL-devel \
         patch \
