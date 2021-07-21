@@ -44,6 +44,7 @@ RUN dnf install -y \
         tar \
         texinfo \
         tmux \
+        tree \
         unzip \
         wget \
         which \
@@ -65,3 +66,4 @@ RUN groupadd -g 4040 yocto && \
 USER yocto
 WORKDIR ${YOCTO_DIR}
 CMD ["/bin/bash"]
+
