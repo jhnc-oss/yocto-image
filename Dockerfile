@@ -46,6 +46,7 @@ RUN dnf install -y \
         tmux \
         tree \
         unzip \
+        vim \
         wget \
         which \
         xterm \
