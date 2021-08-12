@@ -9,16 +9,21 @@ on:
 jobs:
   build_linux:
     runs-on: ubuntu-latest
-    name: "Build"
+    strategy:
+      matrix:
+        fc_version: [ 32, 34 ]
+    name: "Build yocto:${{ matrix.fc_version}}"
     env:
-      IMAGE_NAME: yocto
+      FULL_IMAGE_TAG: "yocto:${{ matrix.fc_version }}"
     steps:
       - uses: actions/checkout@master
       - name: Build
-        run: podman build --tag ${IMAGE_NAME} .
+        run: podman build --file fedora-${{ matrix.fc_version }}/Dockerfile --tag ${FULL_IMAGE_TAG} .
       - uses: hadolint/hadolint-action@v1.5.0
+        with:
+          dockerfile: fedora-${{ matrix.fc_version}}/Dockerfile
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: |
           podman login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
-          podman push localhost/${IMAGE_NAME} ghcr.io/${{ github.repository }}/${IMAGE_NAME}
+          podman push localhost/${FULL_IMAGE_TAG} ghcr.io/${{ github.repository }}/${FULL_IMAGE_TAG}
