@@ -27,3 +27,6 @@ jobs:
         run: |
           podman login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
           podman push localhost/${FULL_IMAGE_TAG} ghcr.io/${{ github.repository }}/${FULL_IMAGE_TAG}
+          if [[ ${{ matrix.fc_version}} -eq 34 ]]; then
+            podman push localhost/${FULL_IMAGE_TAG} ghcr.io/${{ github.repository }}/yocto:latest
+          fi
