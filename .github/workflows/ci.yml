@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        fc_version: [ 32, 34 ]
+        fc_version: [ 32, 33, 34 ]
     name: "Build yocto:${{ matrix.fc_version}}"
     env:
       FULL_IMAGE_TAG: "yocto:${{ matrix.fc_version }}"
