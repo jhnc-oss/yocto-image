@@ -5,6 +5,18 @@
 
 Basic Fedora based image for [Yocto](https://www.yoctoproject.org/) builds. It contains [all packages](https://docs.yoctoproject.org/current/ref-manual/system-requirements.html#required-packages-for-the-build-host) needed to build a headless image.
 
+## Published Images
+
+Images are available on [GHCR](https://github.com/jhnc-oss/yocto-image/pkgs/container/yocto-image%2Fyocto).
+
+### Tags
+
+| Tag | Base | Status |
+|:---:|:----:|:------:|
+| `32` | Fedora 32 | EOL |
+| `33` | Fedora 33 | |
+| `34` / `latest` | Fedora 34 | |
+
 ## Local build
 
 Build the image local using podman:
