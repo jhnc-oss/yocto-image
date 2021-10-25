@@ -1,5 +1,13 @@
 FROM fedora:33
 
+LABEL \
+    org.opencontainers.image.title="yocto" \
+    org.opencontainers.image.description="Fedora based image for Yocto builds" \
+    org.opencontainers.image.source="https://github.com/jhnc-oss/yocto-image" \
+    org.opencontainers.image.documentation="https://github.com/jhnc-oss/yocto-image" \
+    org.opencontainers.image.vendor="jhnc-oss" \
+    org.opencontainers.image.licenses="MIT"
+
 RUN dnf install -y \
         bzip2 \
         ccache \
