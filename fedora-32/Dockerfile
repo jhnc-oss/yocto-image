@@ -1,4 +1,4 @@
-FROM fedora:32 
+FROM fedora:32
 
 LABEL \
     org.opencontainers.image.title="yocto" \
