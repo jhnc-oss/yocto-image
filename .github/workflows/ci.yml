@@ -14,12 +14,12 @@ jobs:
         fc_version: [ 32, 33, 34, 35 ]
     name: "Build yocto:${{ matrix.fc_version}}"
     env:
-      FULL_IMAGE_TAG: "yocto:${{ matrix.fc_version }}"
+      FULL_IMAGE_NAME: "ghcr.io/${{ github.repository }}/yocto"
     steps:
       - uses: actions/checkout@main
       - name: Build
         run: |
-          podman build --file fedora-${{ matrix.fc_version }}/Dockerfile --tag ${FULL_IMAGE_TAG} \
+          podman build --file fedora-${{ matrix.fc_version }}/Dockerfile --tag ${FULL_IMAGE_NAME}:${{ matrix.fc_version }} \
             --label org.opencontainers.image.created="$(date --rfc-3339=seconds --utc)" \
             --label org.opencontainers.image.revision="${GITHUB_SHA}"
       - uses: hadolint/hadolint-action@v1.6.0
@@ -29,7 +29,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           podman login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
-          podman push localhost/${FULL_IMAGE_TAG} ghcr.io/${{ github.repository }}/${FULL_IMAGE_TAG}
+          podman push ${FULL_IMAGE_NAME}:${{ matrix.fc_version }}
           if [[ ${{ matrix.fc_version}} -eq 34 ]]; then
-            podman push localhost/${FULL_IMAGE_TAG} ghcr.io/${{ github.repository }}/yocto:latest
+            podman push ${FULL_IMAGE_NAME}:${{ matrix.fc_version }} ${FULL_IMAGE_NAME}:latest
           fi
