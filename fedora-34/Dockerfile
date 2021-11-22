@@ -58,7 +58,8 @@ RUN dnf install -y \
         wget \
         which \
         xterm \
-        xz && \
+        xz \
+        langpacks-en && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
