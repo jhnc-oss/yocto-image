@@ -63,8 +63,8 @@ RUN dnf install -y \
     rm -rf /var/cache/dnf
 
 ENV LANG=en_US.UTF-8
-ENV LC_ALL=${LANG}
-RUN localedef --force -i en_US -f UTF-8 ${LANG}
+ENV LC_ALL=en_US.UTF-8
+RUN localedef --force -i en_US -f UTF-8 en_US.UTF-8
 
 ENV YOCTO_DIR="/opt/yocto"
 RUN groupadd -g 4040 yocto && \
