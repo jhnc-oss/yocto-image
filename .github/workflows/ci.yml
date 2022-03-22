@@ -22,7 +22,7 @@ jobs:
           podman build --file fedora-${{ matrix.fc_version }}/Dockerfile --tag ${FULL_IMAGE_NAME}:${{ matrix.fc_version }} \
             --label org.opencontainers.image.created="$(date --rfc-3339=seconds --utc)" \
             --label org.opencontainers.image.revision="${GITHUB_SHA}"
-      - uses: hadolint/hadolint-action@v1.6.0
+      - uses: hadolint/hadolint-action@v1.7.0
         with:
           dockerfile: fedora-${{ matrix.fc_version}}/Dockerfile
       - name: Deploy
