@@ -39,3 +39,4 @@ jobs:
       - uses: hadolint/hadolint-action@v1.7.0
         with:
           recursive: true
+          trusted-registries: 'docker.io'
