@@ -19,7 +19,8 @@ jobs:
       - uses: actions/checkout@main
       - name: Build
         run: |
-          podman build --file fedora-${{ matrix.fc_version }}/Dockerfile --tag ${FULL_IMAGE_NAME}:${{ matrix.fc_version }} \
+          podman build --file fedora-${{ matrix.fc_version }}/Dockerfile \
+            --tag ${FULL_IMAGE_NAME}:${{ matrix.fc_version }} \
             --label org.opencontainers.image.created="$(date --rfc-3339=seconds --utc)" \
             --label org.opencontainers.image.revision="${GITHUB_SHA}"
       - name: Deploy
