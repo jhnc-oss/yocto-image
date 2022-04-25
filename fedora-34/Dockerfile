@@ -75,5 +75,11 @@ RUN groupadd -g 4040 yocto && \
 
 USER yocto
 WORKDIR ${YOCTO_DIR}
-CMD ["/bin/bash"]
 
+ENV PATH="${YOCTO_DIR}/.local/bin:${PATH}"
+RUN pip install --no-cache-dir --user -U gitrepo==2.15.4.post1 && \
+    git config --global user.name yocto && \
+    git config --global user.email yocto@localhost && \
+    git config --global color.ui always
+
+CMD ["/bin/bash"]
