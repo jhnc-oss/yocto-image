@@ -80,6 +80,7 @@ ENV PATH="${YOCTO_DIR}/.local/bin:${PATH}"
 RUN pip install --no-cache-dir --user -U gitrepo==2.15.4.post1 && \
     git config --global user.name yocto && \
     git config --global user.email yocto@localhost && \
-    git config --global color.ui always
+    git config --global color.ui always && \
+    git config --global init.defaultBranch "main"
 
 CMD ["/bin/bash"]
