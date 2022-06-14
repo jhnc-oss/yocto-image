@@ -28,9 +28,6 @@ jobs:
         run: |
           podman login ghcr.io -u ${{ github.actor }} --password-stdin <<< ${{ secrets.GITHUB_TOKEN }}
           podman push ${FULL_IMAGE_NAME}:${{ matrix.fc_version }}
-          if [[ ${{ matrix.fc_version}} -eq 34 ]]; then
-            podman push ${FULL_IMAGE_NAME}:${{ matrix.fc_version }} ${FULL_IMAGE_NAME}:latest
-          fi
 
   hadolint:
     runs-on: ubuntu-latest
