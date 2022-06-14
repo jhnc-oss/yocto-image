@@ -1,4 +1,6 @@
-FROM docker.io/fedora:34
+ARG FC_VERSION=36
+
+FROM docker.io/fedora:${FC_VERSION}
 
 LABEL \
     org.opencontainers.image.title="yocto" \
