@@ -62,7 +62,10 @@ RUN dnf remove -y vim-minimal && \
         which \
         xterm \
         xz \
-        langpacks-en && \
+        langpacks-en \
+        glibc-devel.i686 \
+        libatomic.i686 \
+        libstdc++-static.i686 && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
