@@ -63,6 +63,7 @@ RUN dnf remove -y vim-minimal && \
         xterm \
         xz \
         langpacks-en \
+        libstdc++-static.x86_64 \
         glibc-devel.i686 \
         libatomic.i686 \
         libstdc++-static.i686 && \
