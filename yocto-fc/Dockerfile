@@ -25,12 +25,18 @@ RUN dnf remove -y vim-minimal && \
         gcc \
         gcc-c++ \
         git \
-        glibc-locale-source \
         glibc-devel \
+        glibc-devel.i686 \
         glibc-langpack-en \
+        glibc-locale-source \
         glibc-locale-source \
         gzip \
         hostname \
+        langpacks-en \
+        libatomic.i686 \
+        libstdc++-static.i686 \
+        libstdc++-static.x86_64 \
+        lz4 \
         make \
         mesa-libGL-devel \
         patch \
@@ -58,15 +64,12 @@ RUN dnf remove -y vim-minimal && \
         tree \
         unzip \
         vim \
+        vim-minimal \
         wget \
         which \
         xterm \
         xz \
-        langpacks-en \
-        libstdc++-static.x86_64 \
-        glibc-devel.i686 \
-        libatomic.i686 \
-        libstdc++-static.i686 && \
+        zstd && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
