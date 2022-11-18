@@ -29,7 +29,6 @@ RUN dnf remove -y vim-minimal && \
         glibc-devel.i686 \
         glibc-langpack-en \
         glibc-locale-source \
-        glibc-locale-source \
         gzip \
         hostname \
         langpacks-en \
