@@ -16,7 +16,7 @@ Images are available on [GHCR](https://github.com/jhnc-oss/yocto-image/pkgs/cont
 | `38` | Fedora 38 | |
 | `37` | Fedora 37 | |
 | `36` | Fedora 36 | |
-| `35` | Fedora 35 | |
+| `35` | Fedora 35 | Deprecated |
 | `34` | Fedora 34 | Deprecated |
 | `33` | Fedora 33 | EOL |
 | `32` | Fedora 32 | EOL |
