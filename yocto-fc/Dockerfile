@@ -22,6 +22,7 @@ RUN dnf remove -y vim-minimal && \
         file \
         findutils \
         gawk \
+        gettext \
         gcc \
         gcc-c++ \
         git \
