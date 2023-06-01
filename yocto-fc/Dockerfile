@@ -24,6 +24,7 @@ RUN dnf remove -y vim-minimal && \
         gawk \
         gcc \
         gcc-c++ \
+        gettext \
         git \
         glibc-devel \
         glibc-devel.i686 \
