@@ -10,8 +10,7 @@ LABEL \
     org.opencontainers.image.vendor="jhnc-oss" \
     org.opencontainers.image.licenses="MIT"
 
-RUN dnf remove -y vim-minimal && \
-    dnf install -y \
+RUN dnf install -y \
         bzip2 \
         ccache \
         chrpath \
