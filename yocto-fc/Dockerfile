@@ -21,6 +21,7 @@ RUN dnf remove -y vim-minimal && \
         diffutils \
         file \
         findutils \
+        fd-find \
         gawk \
         gcc \
         gcc-c++ \
@@ -54,6 +55,7 @@ RUN dnf remove -y vim-minimal && \
         python3-jinja2 \
         python3-pexpect \
         python3-pip \
+        ripgrep \
         rpcgen \
         SDL-devel \
         socat \
