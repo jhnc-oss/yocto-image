@@ -20,6 +20,7 @@ RUN dnf install -y \
         diffutils \
         file \
         findutils \
+        fd-find \
         gawk \
         gcc \
         gcc-c++ \
@@ -53,6 +54,7 @@ RUN dnf install -y \
         python3-jinja2 \
         python3-pexpect \
         python3-pip \
+        ripgrep \
         rpcgen \
         SDL-devel \
         socat \
