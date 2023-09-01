@@ -10,7 +10,8 @@ LABEL \
     org.opencontainers.image.vendor="jhnc-oss" \
     org.opencontainers.image.licenses="MIT"
 
-RUN dnf install -y \
+RUN dnf update -y && \
+    dnf install -y \
         bzip2 \
         ccache \
         chrpath \
