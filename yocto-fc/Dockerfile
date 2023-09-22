@@ -78,8 +78,8 @@ ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
 ENV YOCTO_DIR="/opt/yocto"
-RUN groupadd -g 4040 yocto && \
-    adduser yocto -d ${YOCTO_DIR} -g yocto -u 2000 && \
+RUN groupadd -g 1000 yocto && \
+    adduser yocto -d ${YOCTO_DIR} -g yocto -u 1000 && \
     echo "%yocto ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/yocto && \
     chmod 0440 /etc/sudoers.d/yocto
 
