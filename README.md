@@ -26,21 +26,7 @@ Images are available on [GHCR](https://github.com/jhnc-oss/yocto-image/pkgs/cont
 Build the image local using podman:
 
 ```sh
-$ podman build --tag yocto:34 -f ./fedora-34/Dockerfile
-```
-
-The image is visible in local registry now:
-
-```sh
-$ podman images
-REPOSITORY                                        TAG     IMAGE ID      CREATED        SIZE
-localhost/yocto                                   34      90bb9e120a36  2 minutes ago  777 MB
-```
-
-Run and enter the container:
-
-```sh
-$ podman run -it --name yocto --rm yocto:34
-$ cat /etc/fedora-release
-Fedora release 34 (Thirty Four)
+$ podman build --file yocto-fc/Dockerfile \
+            --build-arg FC_VERSION=<Fedora Version> \
+            --tag <Image Tag>
 ```
