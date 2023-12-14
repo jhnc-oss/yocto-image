@@ -87,7 +87,7 @@ USER yocto
 WORKDIR ${YOCTO_DIR}
 
 ENV PATH="${YOCTO_DIR}/.local/bin:${PATH}"
-RUN pip install --no-cache-dir --user -U gitrepo==2.31.1 && \
+RUN pip install --no-cache-dir --user -U gitrepo==2.32.2 && \
     git config --global user.name yocto && \
     git config --global user.email yocto@localhost && \
     git config --global color.ui never && \
