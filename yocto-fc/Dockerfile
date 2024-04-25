@@ -27,15 +27,12 @@ RUN dnf update -y && \
         gcc-c++ \
         git \
         glibc-devel \
-        glibc-devel.i686 \
         glibc-langpack-en \
         glibc-locale-source \
         gzip \
         hostname \
         langpacks-en \
-        libatomic.i686 \
-        libstdc++-static.i686 \
-        libstdc++-static.x86_64 \
+        libstdc++-static \
         lz4 \
         make \
         mesa-libGL-devel \
