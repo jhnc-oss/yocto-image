@@ -52,6 +52,7 @@ RUN dnf update -y && \
         python3-jinja2 \
         python3-pexpect \
         python3-pip \
+        python3-setuptools \
         ripgrep \
         rpcgen \
         SDL-devel \
