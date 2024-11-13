@@ -19,9 +19,9 @@ RUN dnf update -y && \
         cpp \
         diffstat \
         diffutils \
+        fd-find \
         file \
         findutils \
-        fd-find \
         gawk \
         gcc \
         gcc-c++ \
@@ -31,6 +31,7 @@ RUN dnf update -y && \
         glibc-locale-source \
         gzip \
         hostname \
+        krb5-devel \
         langpacks-en \
         libstdc++-static \
         lz4 \
@@ -48,11 +49,13 @@ RUN dnf update -y && \
         perl-Thread-Queue \
         python \
         python3 \
+        python3-devel \
         python3-GitPython \
         python3-jinja2 \
         python3-pexpect \
         python3-pip \
         python3-setuptools \
+        python3-toml \
         ripgrep \
         rpcgen \
         SDL-devel \
