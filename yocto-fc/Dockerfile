@@ -33,6 +33,7 @@ RUN dnf update -y && \
         hostname \
         krb5-devel \
         langpacks-en \
+        libacl \
         libstdc++-static \
         lz4 \
         make \
