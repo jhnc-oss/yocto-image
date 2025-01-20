@@ -13,6 +13,7 @@ LABEL \
 RUN dnf update -y && \
     dnf install -y \
         bzip2 \
+        cargo \
         ccache \
         chrpath \
         cpio \
@@ -57,6 +58,7 @@ RUN dnf update -y && \
         python3-pip \
         python3-setuptools \
         python3-toml \
+        quilt \
         ripgrep \
         rpcgen \
         SDL-devel \
