@@ -13,6 +13,7 @@ Images are available on [GHCR](https://github.com/jhnc-oss/yocto-image/pkgs/cont
 
 | Tag | Base | Status |
 |:---:|:----:|:------:|
+| `41` | Fedora 42 | Beta |
 | `41` | Fedora 41 | |
 | `40` | Fedora 40 | |
 | `39` | Fedora 39 | EOL |
