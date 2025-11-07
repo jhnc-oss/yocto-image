@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        fc_version: [ 38, 40, 41, 42 ]
+        fc_version: [ 38, 40, 41, 42, 43 ]
     name: "Build yocto:${{ matrix.fc_version}}"
     env:
       FULL_IMAGE_NAME: "ghcr.io/${{ github.repository }}/yocto"
