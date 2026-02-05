@@ -97,4 +97,17 @@ RUN pip install --no-cache-dir --user -U gitrepo==2.32.2 && \
     git config --global color.ui never && \
     git config --global init.defaultBranch "main"
 
+ENV CDX_CHKSUM="c28d86750e2dd5ed9a325f148e2e625ba8ce574ce580fb5e9ace913a1b20f403"
+ENV CDX_VERSION="0.5.7"
+ENV CDX_ARCH="x86_64-unknown-linux-gnu"
+ENV CDX_FILE="cargo-cyclonedx-${CDX_ARCH}.tar.xz"
+ENV CDX_URL="https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-${CDX_VERSION}/${CDX_FILE}"
+RUN curl -LsSf -o "/tmp/${CDX_FILE}" "${CDX_URL}" && \
+    echo "${CDX_CHKSUM}  /tmp/${CDX_FILE}" > /tmp/${CDX_FILE}.checksum.sha256 && \
+    sha256sum -c /tmp/${CDX_FILE}.checksum.sha256 && \
+    tar -xJf "/tmp/${CDX_FILE}" -C "$HOME/.local/bin" --strip-components=1 && \
+    rm -rf "/tmp/${CDX_FILE}"
+
+RUN ls -la "$HOME/.local/bin"
+
 CMD ["/bin/bash"]
