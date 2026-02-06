@@ -88,7 +88,6 @@ RUN groupadd -g 1000 yocto && \
     chmod 0440 /etc/sudoers.d/yocto
 
 USER yocto
-WORKDIR ${YOCTO_DIR}
 
 ENV PATH="${YOCTO_DIR}/.local/bin:${PATH}"
 RUN pip install --no-cache-dir --user -U gitrepo==2.32.2 && \
@@ -96,5 +95,18 @@ RUN pip install --no-cache-dir --user -U gitrepo==2.32.2 && \
     git config --global user.email yocto@localhost && \
     git config --global color.ui never && \
     git config --global init.defaultBranch "main"
+
+WORKDIR "/tmp"
+RUN CDX_VERSION="0.5.7" && \
+    CDX_FILE="cargo-cyclonedx-x86_64-unknown-linux-gnu.tar.xz" && \
+    CDX_URL="https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-${CDX_VERSION}" && \
+    curl -LsSf -o "${CDX_FILE}" "${CDX_URL}/cargo-cyclonedx-x86_64-unknown-linux-gnu.tar.xz" && \
+    curl -LsSf -o "${CDX_FILE}.sha256" "${CDX_URL}/cargo-cyclonedx-x86_64-unknown-linux-gnu.tar.xz.sha256" && \
+    sha256sum -c "${CDX_FILE}.sha256" && \
+    tar -xJf "${CDX_FILE}" --strip-components=1 && \
+    mv ./cargo-cyclonedx "${HOME}/.local/bin" && \
+    rm -rf /tmp/*
+
+WORKDIR ${YOCTO_DIR}
 
 CMD ["/bin/bash"]
