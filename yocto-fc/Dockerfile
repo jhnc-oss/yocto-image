@@ -1,4 +1,4 @@
-ARG FC_VERSION=36
+ARG FC_VERSION
 
 FROM docker.io/fedora:${FC_VERSION}
 
