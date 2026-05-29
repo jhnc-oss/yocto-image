@@ -97,7 +97,7 @@ RUN pip install --no-cache-dir --user -U gitrepo==2.32.2 && \
     git config --global init.defaultBranch "main"
 
 WORKDIR "/tmp"
-RUN CDX_VERSION="0.5.7" && \
+RUN CDX_VERSION="0.5.9" && \
     CDX_FILE="cargo-cyclonedx-x86_64-unknown-linux-gnu.tar.xz" && \
     CDX_URL="https://github.com/CycloneDX/cyclonedx-rust-cargo/releases/download/cargo-cyclonedx-${CDX_VERSION}" && \
     curl -LsSf -o "${CDX_FILE}" "${CDX_URL}/cargo-cyclonedx-x86_64-unknown-linux-gnu.tar.xz" && \
