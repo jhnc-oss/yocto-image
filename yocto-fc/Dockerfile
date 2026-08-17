@@ -87,7 +87,7 @@ RUN groupadd -g 1000 yocto && \
     echo "%yocto ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/yocto && \
     chmod 0440 /etc/sudoers.d/yocto
 
-USER yocto
+USER 1000
 
 ENV PATH="${YOCTO_DIR}/.local/bin:${PATH}"
 RUN pip install --no-cache-dir --user -U gitrepo==2.32.2 && \
