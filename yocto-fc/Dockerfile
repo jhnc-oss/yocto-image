@@ -75,6 +75,9 @@ RUN dnf update -y && \
         xterm \
         xz \
         zstd && \
+        if [ "$(rpm -E %fedora)" -ge 42 ]; then \
+            dnf install -y util-linux-script; \
+        fi && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
